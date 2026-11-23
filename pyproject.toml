@@ -11,21 +11,30 @@ license = "Apache-2.0"
 license-files = ["LICENSE", "NOTICE", "LICENSES/*"]
 authors = [{ name = "Hermes Reisner" }]
 requires-python = ">=3.10"
-# [fill: pin to the versions the release was tested with]
+# Tested with mlx 0.32.4, numpy 2.5.5, safetensors 0.8.0, torch 2.15.0, imageio 2.38.2,
+# imageio-ffmpeg 0.8.1, pillow 13.0.0. torch is only used to read the two .ckpt weight files.
 dependencies = [
-    "mlx",
+    "mlx>=0.32",
     "numpy",
     "safetensors",
+    "torch",
+    "imageio",
+    "imageio-ffmpeg",
+    "pillow",
 ]
 
 [project.optional-dependencies]
-# The parity tests run the upstream PyTorch code as the reference.
-test = ["torch", "einops", "pytest"]
+# The parity tests run the upstream PyTorch code (git submodule third_party/FlashVSR) as the reference.
+test = ["pytest", "einops"]
+
+[project.scripts]
+flashvsr-mlx = "mlx_flashvsr.cli:main"
 
 [project.urls]
 Upstream = "https://github.com/OpenImagingLab/FlashVSR"
 
-# [fill: console script for the CLI from task 3b, e.g. flashvsr-mlx = "flashvsr_mlx.cli:main"]
+[tool.setuptools]
+packages = ["mlx_flashvsr"]
 
-[tool.setuptools.packages.find]
-where = ["src"]
+[tool.setuptools.package-data]
+mlx_flashvsr = ["assets/posi_prompt.pth"]

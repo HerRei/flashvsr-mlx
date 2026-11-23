@@ -8,6 +8,13 @@ FlashVSR builds on:
 - Wan 2.1 (https://github.com/Wan-Video/Wan2.1), licensed under the Apache License 2.0.
 - DiffSynth-Studio (https://github.com/modelscope/DiffSynth-Studio), licensed under the Apache License 2.0.
 
+mlx_flashvsr/assets/posi_prompt.pth is FlashVSR's prompt embedding
+(examples/WanVSR/prompt_tensor/posi_prompt.pth upstream), Apache License 2.0.
+
+The Metal kernel in mlx_flashvsr/block_sparse_attn.py adapts parts of MLX's steel attention kernels
+(https://github.com/ml-explore/mlx), Copyright (c) 2023-2026 Apple Inc., licensed under the MIT License
+(see LICENSES/MLX-MIT.txt).
+
 The TCDecoder port is based on TAEHV (https://github.com/madebyollin/taehv),
 Copyright (c) 2025 Ollin Boer Bohan, licensed under the MIT License (see LICENSES/TAEHV-MIT.txt).
 
