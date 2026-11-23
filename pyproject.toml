@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "flashvsr-mlx"
+version = "0.1.0"
+description = "MLX port of FlashVSR v1.1 (Tiny) video super-resolution for Apple Silicon"
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE", "LICENSES/*"]
+authors = [{ name = "Hermes Reisner" }]
+requires-python = ">=3.10"
+# [fill: pin to the versions the release was tested with]
+dependencies = [
+    "mlx",
+    "numpy",
+    "safetensors",
+]
+
+[project.optional-dependencies]
+# The parity tests run the upstream PyTorch code as the reference.
+test = ["torch", "einops", "pytest"]
+
+[project.urls]
+Upstream = "https://github.com/OpenImagingLab/FlashVSR"
+
+# [fill: console script for the CLI from task 3b, e.g. flashvsr-mlx = "flashvsr_mlx.cli:main"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

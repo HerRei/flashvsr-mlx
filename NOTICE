@@ -1,0 +1,15 @@
+FlashVSR for Apple Silicon
+Copyright 2026 Hermes Reisner
+
+This product is a port of FlashVSR (https://github.com/OpenImagingLab/FlashVSR),
+Copyright the FlashVSR authors, OpenImagingLab, licensed under the Apache License 2.0.
+
+FlashVSR builds on:
+- Wan 2.1 (https://github.com/Wan-Video/Wan2.1), licensed under the Apache License 2.0.
+- DiffSynth-Studio (https://github.com/modelscope/DiffSynth-Studio), licensed under the Apache License 2.0.
+
+The TCDecoder port is based on TAEHV (https://github.com/madebyollin/taehv),
+Copyright (c) 2025 Ollin Boer Bohan, licensed under the MIT License (see LICENSES/TAEHV-MIT.txt).
+
+The model weights are not part of this repository. They are downloaded from
+https://huggingface.co/JunhaoZhuang/FlashVSR-v1.1 and are licensed under the Apache License 2.0.
